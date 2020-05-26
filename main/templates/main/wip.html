@@ -1,0 +1,38 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+	<div class="d-flex site-container container">
+		<div class="m-auto d-flex flex-column">
+			<div class="d-inline-flex mb-4 mx-auto">
+				<a href="http://www.upesc.org" class="my-auto mx-3">
+					<img src="{% static 'main/images/esc-sm.png' %}" class="wip-image" alt="Engineering Student Council">
+				</a>
+				<a href="http://dcs.upd.edu.ph" class="my-auto mx-3">
+					<img src="{% static 'main/images/dcs-sm.png' %}" class="wip-image" alt="Department of Computer Science">
+				</a>
+			</div>
+			<div class="text-center">
+				<p class="font-weight-bold mb-2">WEBSITE UNDER CONSTRUCTION</p>
+				<p>Delivering better services soon.</p>
+			</div>
+			<div class="mt-2 mb-3" style="border-top:1px solid white">
+			</div>
+			<div class="socmed-icons d-flex text-center">
+				<div class="mx-auto">
+					<a href="https://www.facebook.com/up.csreps" class="mx-2">
+						<i class="fab fa-facebook"></i>
+					</a>
+
+					<a href="https://www.twitter.com/up_csreps" class="mx-2">
+						<i class="fab fa-twitter"></i>
+					</a>
+					<a href="mailto:cs.reps@coe.upd.edu.ph" class="mx-2">
+						<i class="fas fa-envelope"></i>
+					</a>
+				</div>
+			</div>
+
+			<small class="text-center mt-4">Computer Science Representatives</small>
+		</div>
+	</div>
+{% endblock %}

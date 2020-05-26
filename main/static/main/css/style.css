@@ -1,0 +1,34 @@
+/* CS Reps Site Styles */
+
+
+body{
+	background-color: #121212;
+	color: white;
+}
+
+.site-container{
+	min-height: 100vh;
+}
+
+.site-content{
+	min-height: 85vh;
+}
+
+.wip-image{
+	height: 60px;
+}
+
+.socmed-icons{
+	font-size: 1.5em;
+}
+
+a{
+	color: white;
+	transition: 0.15s ease-in-out;
+}
+
+a:hover{
+	color: white;
+	opacity: 0.85;
+	text-decoration: none;
+}

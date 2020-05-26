@@ -1,0 +1,1 @@
+web: gunicorn upd_csreps.wsgi

@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{% block title %}Computer Science Representatives - Engineering Student Council{% endblock %}</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta charset="utf-8">
+		<meta name="application-name" content="Computer Science Representatives">
+		<link rel="stylesheet" href="{% static 'main/css/bootstrap.min.css' %}">
+		<link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+		<link rel="shortcut icon" href="{% static 'main/favicon.ico' %}" type="image/x-icon">
+		<link rel="icon" href="{% static 'main/favicon.ico' %}" type="image/x-icon">
+		<script src="https://kit.fontawesome.com/76d8a563a1.js" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<div class="site-container w-100 d-flex flex-column">
+			<div class="site-content my-auto">
+				{% block content %}
+				{% endblock %}
+			</div>
+		</div>
+		<script src="{% static 'main/js/jquery-3.5.1.min.js' %}"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="{% static 'main/js/bootstrap.min.js' %}"></script>
+	</body>
+</html>
