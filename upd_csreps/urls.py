@@ -20,3 +20,8 @@ urlpatterns = [
     #path('admin/', admin.site.urls),
     path('', include('main.urls')),
 ]
+
+handler400 = 'main.views.wip_redirect'
+handler403 = 'main.views.wip_redirect'
+handler404 = 'main.views.wip_redirect'
+handler500 = 'main.views.wip_redirect'

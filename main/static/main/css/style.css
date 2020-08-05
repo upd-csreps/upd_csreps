@@ -1,7 +1,7 @@
 /* CS Reps Site Styles */
 
 
-body{
+.wip-body{
 	background-color: #121212;
 	color: white;
 }
@@ -22,12 +22,12 @@ body{
 	font-size: 1.5em;
 }
 
-a{
+.wip-body a{
 	color: white;
 	transition: 0.15s ease-in-out;
 }
 
-a:hover{
+.wip-body a:hover{
 	color: white;
 	opacity: 0.85;
 	text-decoration: none;
