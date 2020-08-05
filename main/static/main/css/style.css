@@ -1,5 +1,9 @@
 /* CS Reps Site Styles */
 
+body{
+	font-family: 'Open Sans', sans-serif;
+	background-color: #efefef;
+}
 
 .wip-body{
 	background-color: #121212;
@@ -31,4 +35,82 @@
 	color: white;
 	opacity: 0.85;
 	text-decoration: none;
+}
+
+.csreps-header{
+	z-index: 100;
+}
+
+.csreps-header .navbar-brand img{
+	height: 2.25rem;
+}
+
+.landing-bg{
+	background-image: url('../images/landing/comsci-bg.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	color:white;
+	border-bottom: #7b1315 5px solid;
+}
+
+.landing-bg .botleft-vector{
+	background-image: url('../images/landing/botleft-vector.png');
+	background-repeat: no-repeat; 
+	background-position: bottom left; 
+	background-size: contain; 
+	opacity: 0.9;
+	transition: 0.2s ease-in-out;
+	background-attachment: fixed;
+}
+
+.landing-bg .right-vector{
+	background-image: url('../images/landing/hex-grid.png');
+	background-repeat: no-repeat; 
+	background-position: right; 
+	background-size: 45%; 
+	opacity: 0.34;
+	transition: 0.2s ease-in-out;
+	background-attachment: fixed;
+}
+
+.landing-overlay{
+	background-color: #166735; 
+	height: 100%;
+	width: 100%;
+	opacity: 0.42;
+	position: absolute;
+	border-bottom: #7b1315 5px solid;
+}
+
+.landing-content{
+	z-index: 2;
+}
+
+.landing-content .title{
+	font-size: 4rem;
+	letter-spacing: 0.1rem;
+}
+
+.landing-content .subtext{
+	text-shadow: #d2d2d2 0px 3px 0px;
+	background-color: #efefef;
+	color: #f7961d;
+}
+
+.container{
+	max-width: 1280px;
+}
+
+.landing-bg-credits{
+	text-align: right;
+}
+
+.landing-bg-credits .container{
+	opacity: 0.85;
+}
+
+.after-landpage{
+	border-top: solid 3px #cddccd;
 }
