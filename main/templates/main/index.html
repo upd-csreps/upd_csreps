@@ -170,19 +170,48 @@
 				</div>
 			</div>
 
-			<div class="my-5">
+			<div class="my-5 py-3">
 				<h1 class="font-weight-bold mb-1">
 					<span class="text-green">the cs network.</span>
 				</h1>
-				<p>Carousel</p>
+				<div class="row my-5">
+					<div class="col-lg-3 d-flex">
+						<img class="m-auto" src="{% static 'main/images/cs-net-logo.png' %}" style="height: 15rem">
+					</div>
+					<div class="col-lg-9">
+						Insert CS Network description, members and consti
+					</div>
+				</div>
 			</div>
 
+			{% if fb_data %}
 			<div class="my-5">
 				<h1 class="font-weight-bold mb-1">
 					<span class="text-green">updates.</span>
 				</h1>
-				<p> insert inspired from ust website here w/ fb-api</p>
+				
+				<div class="row">
+					<div class="col-lg-3">
+						<h4 class="font-weight-bold">calendar of events</h4>
+					</div>
+					<div class="col-lg-9">
+						<p> # Redesign to something inspired from ust website here</p>
+						{% for item in fb_data %}
+						<div class="row my-5">
+							<div class="col-lg-4 d-flex">
+								<a href="{{item.url}}" class="mx-auto">
+									<img src="{{item.media.image.src}}"  style="max-height: 250px;">
+								</a>
+							</div>
+							<div class="col-lg-8">
+								{{item.description|safe|linebreaks}}
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+				</div>
 			</div>
+			{% endif %}
 		</div>
 	</div>
 {% endblock %}

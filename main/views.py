@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.conf import settings
+from django.template.loader import render_to_string
 
 import requests
 
@@ -21,7 +22,14 @@ def index(request):
 	}
 	r = requests.get(fb_url, params=parameters)
 
-	context = {}
+	fb_content = []
+
+	for item in r.json()['data']:
+		added = item['attachments']['data'][0]
+		if added['type'] == 'photo':
+			fb_content.append(added)
+
+	context = {'fb_data': fb_content}
 	return render(request, 'main/index.html', context)
 
 def wip_redirect(request, exception=None):
