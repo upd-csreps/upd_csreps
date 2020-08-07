@@ -7,11 +7,16 @@
 			<div class="h-100 right-vector position-absolute w-100" style="top:0"></div>
 		</div>
 		<div class="container landing-content d-flex">
-			<div class="my-auto mx-auto mx-lg-0">
+			<div class="my-auto mx-auto mx-lg-0 d-flex flex-column">
 				<p class="top-text mb-1" style="letter-spacing: 5px;">UNIVERSITY OF THE PHILIPPINES DILIMAN</p>
-				<h1 class="font-weight-bold title">COMPUTER SCIENCE</h1>
+				<span class="font-weight-bold title">COMPUTER SCIENCE</span>
 				<div class="px-2 subtext">
-					<h1 class="font-weight-bold title">REPRESENTATIVES</h1>
+					<span class="font-weight-bold title">REPRESENTATIVES</span>
+				</div>
+				<div class="landing-socmed mt-4 ml-auto mr-auto ml-lg-0">
+					<a href="https://www.facebook.com/up.csreps" class="d-inline-flex"><i class=" m-auto fab fa-facebook-f"></i></a>
+					<a href="https://www.twitter.com/up_csreps" class="d-inline-flex mx-2"><i class="fab fa-twitter m-auto"></i></a>
+					<a href="mailto:cs.reps@coe.upd.edu.ph" class="d-inline-flex"><i class="fas fa-envelope m-auto"></i></a>
 				</div>
 			</div>
 		</div>
@@ -22,15 +27,79 @@
 		</div>
 	</div>
 	<div class="after-landpage">
-		<div class="container my-4">
-			<h1 class="font-weight-bold">about.</h1>
+		<div class="container">
+			<div class="my-5 py-5">
+				<div class="row">
+					<div class="col-lg-7">
+						<h1 class="font-weight-bold mb-3">
+							<span class="text-green">about.</span> 
+							<i class="fas fa-laptop-code h3"></i>
+						</h1>
+						<p>We are the Computer Science Representatives to the Engineering
+						Student Council, the direct arm of the UP Diliman Department of
+						Computer Science in organizing events and activities to foster an
+						environment that promotes academic excellence, professionalism and
+						social responsibility. We represent <span class="font-weight-bold">over 400 undergraduate students</span> taking BS Computer Science.</p>
+					</div>
+					<div class="col-lg-5 d-flex flex-column mt-3 mt-lg-0">
+						<h4 class="font-weight-bold text-center mb-3">Current CS Representatives</h4>
+						<div class="m-auto">
+							<div class="csrep-frame mb-3 d-inline-flex flex-column flex-lg-row d-lg-flex">
+								<img class="my-auto rounded-circle align-self-center" src="{% static 'main/images/landing/cs-rep-1.jpg' %}">
+								<p class="ml-3 my-lg-auto mt-3">Walter Rafael Partosa Jr.</p>
+							</div>
+							<div class="csrep-frame mb-3 d-inline-flex flex-column flex-lg-row d-lg-flex">
+								<img class="my-auto rounded-circle align-self-center" src="{% static 'main/images/landing/cs-rep-2.jpg' %}">
+								<p class="ml-3 my-lg-auto mt-3">Menard Ysrael Cruz</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="my-5">
+				<h1 class="font-weight-bold">
+					<span class="text-green">our events.</span>
+					<i class="far fa-calendar-alt h3"></i>
+				</h1>
+				<div class="row">
+					<div class="col-lg-6 p-2 csreps-events">
+						<div class="d-flex bg-pic" style="background-image: url('{% static 'main/images/landing/grad-dinner.jpg' %}');">
+							<div class="overlay"></div>
+							<div class="m-auto title">
+								<h2 class="font-weight-bold" style="color: white">GRADUATION DINNER</h2>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6 p-2 csreps-events" >
+						<div class="d-flex bg-pic" style="background-image: url('{% static 'main/images/landing/bootcamp.jpg' %}');">
+							<div class="overlay"></div>
+							<div class="m-auto title" >
+								<h2 class="font-weight-bold" style="color: white">BOOTCAMP</h2>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6 p-2 csreps-events"  >
+						<div class="d-flex bg-pic" style="background-color: #555;/*background-image: url('{% static 'main/images/landing/grad-dinner.jpg' %}*/');">
+							<div class="overlay"></div>
+							<div class="m-auto title" >
+								<h2 class="font-weight-bold" style="color: white">GEECS</h2>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6 p-2 csreps-events"  >
+						<div class="d-flex bg-pic" style="background-image: url('{% static 'main/images/landing/cs-week.jpg' %}'); ">
+							<div class="overlay"></div>
+							<div class="m-auto title" >
+								<h2 class="font-weight-bold" style="color: white">CS WEEK</h2>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-	</div>
 {% endblock %}
 
 {% block scripts %}
 	<script>
-
-
 	</script>
 {% endblock %}

@@ -3,3 +3,5 @@ gunicorn
 django-heroku
 psycopg2
 tweepy
+requests
+urllib3

@@ -2,12 +2,14 @@
 
 body{
 	font-family: 'Open Sans', sans-serif;
-	background-color: #efefef;
+	background-color: #f1f1f1;
+	font-size: 1.15rem;
 }
 
 .wip-body{
 	background-color: #121212;
 	color: white;
+	font-size: initial;
 }
 
 .site-container{
@@ -37,7 +39,7 @@ body{
 	text-decoration: none;
 }
 
-.csreps-header{
+.csreps-header, .csreps-footer{
 	z-index: 100;
 }
 
@@ -91,6 +93,7 @@ body{
 .landing-content .title{
 	font-size: 4rem;
 	letter-spacing: 0.1rem;
+	padding: 0
 }
 
 .landing-content .subtext{
@@ -100,7 +103,7 @@ body{
 }
 
 .container{
-	max-width: 1280px;
+	max-width: 1275px;
 }
 
 .landing-bg-credits{
@@ -111,6 +114,96 @@ body{
 	opacity: 0.85;
 }
 
+.landing-socmed{
+	font-size: 1.5rem;
+}
+
+.landing-socmed a{
+	color: white;
+	border-radius: 100%;
+	width: 3.75rem;
+	height: 3.75rem;
+	border: 1px solid white;
+	transition: 0.07s;
+}
+
+.landing-socmed a:hover{
+	background-color: white;
+	color: #166735;
+	text-decoration: none;
+}
+
 .after-landpage{
 	border-top: solid 3px #cddccd;
 }
+
+.text-green{
+	color: #166735;
+}
+
+.bg-green{
+	background-color: #166735;
+}
+
+.csrep-frame img{
+	max-height: 7rem;
+}
+
+.csreps-footer{
+	color: white;
+	overflow: hidden;
+	position: relative;
+}
+
+.footer-overlay{
+	background-image: url(../images/landing/botright-vector.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 37%;
+    opacity: 0.75;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.csreps-events{
+	height: 17.5rem;
+	display: flex;
+}
+
+.csreps-events:hover{
+	cursor: pointer;
+}
+
+.csreps-events .bg-pic{
+	background-size: 100%;
+	background-position: center;
+	height: 100%;
+	width: 100%;
+	transition: 0.15s ease-in-out;
+	overflow: hidden;
+	position: relative;
+}
+
+.csreps-events .bg-pic:hover{
+	background-size: 115%;
+}
+
+.csreps-events .overlay{
+	background-color: black;
+	opacity: 0.12;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	transition: 0.15s;
+}
+
+.csreps-events .bg-pic:hover .overlay{
+	background-color: #7b1315;
+	opacity: 0.6;
+}
+
+.csreps-events .title{
+	z-index: 3;
+}
+
