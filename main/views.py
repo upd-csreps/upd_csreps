@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.conf import settings
 from django.template.loader import render_to_string
+from datetime import datetime
+import iso8601
 
 import requests
 
@@ -16,7 +18,7 @@ def index(request):
 	fb_url ='https://graph.facebook.com/v8.0/%s/posts' % 'up.csreps'
 
 	parameters = {
-		'fields': 'id,attachments',
+		'fields': 'id,attachments,created_time',
 		'access_token': settings.FB_ACCESS_TOKEN, 
 		'limit': 10
 	}
@@ -26,8 +28,10 @@ def index(request):
 
 	for item in r.json()['data']:
 		added = item['attachments']['data'][0]
+		added['date'] = iso8601.parse_date(item['created_time'])
 		if added['type'] == 'photo':
 			fb_content.append(added)
+
 
 	context = {'fb_data': fb_content}
 	return render(request, 'main/index.html', context)

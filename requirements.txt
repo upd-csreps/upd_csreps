@@ -5,3 +5,4 @@ psycopg2
 tweepy
 requests
 urllib3
+iso8601
