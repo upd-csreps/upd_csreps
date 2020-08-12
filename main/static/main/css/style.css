@@ -207,3 +207,25 @@ body{
 	z-index: 3;
 }
 
+.cs-net-mems p{
+	margin-bottom: 0.5rem;
+	font-size: 1rem;
+}
+
+.btn{
+	border-radius: 0;
+}
+
+.btn-primary{
+	background-color: #166735;
+	border-color: #166735;
+}
+
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus{
+	background-color: #4b6f2c;
+	border-color: #f7961d;
+}
+
+a:hover{
+	text-decoration: none;
+}
