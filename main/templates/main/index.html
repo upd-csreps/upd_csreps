@@ -102,7 +102,7 @@
 					<span class="text-green">our projects and services.</span>
 					<i class="fas fa-concierge-bell h3"></i>
 				</h1>
-				<div>
+				<div class="csreps-projects">
 					<div class="row py-4">
 						<div class="col-lg-6 order-lg-2 d-flex">
 							<img class="mx-auto align-self-center" src="{% static 'main/images/landing/acadsesh.png' %}" style="width: 50%">
@@ -213,14 +213,14 @@
 			</div>
 
 			<div class="my-5">
-				<h1 class="font-weight-bold mb-4">
-					<span class="text-green">the cs network.</span>
-				</h1>
 				<div class="row my-3">
-					<div class="col-lg-3 d-flex">
+					<div class="col-lg-4 d-flex order-2">
 						<img class="mx-auto" src="{% static 'main/images/cs-net-logo.png' %}" style="height: 15rem">
 					</div>
-					<div class="col-lg-9">
+					<div class="col-lg-8 order-1">
+						<h1 class="font-weight-bold mb-4">
+							<span class="text-green">the cs network.</span>
+						</h1>
 						<p>
 							Organized by the CS Representatives, the CS Network is the first student organization alliance of its kind in the UP Diliman College of Engineering.
 						</p>
@@ -231,12 +231,96 @@
 							</button>
 						</a>
 						<h5 class="font-weight-bold">Members</h5>
-						<div class="cs-net-mems mt-3">
-							<p>Association for Computing Machinery - UP Diliman Student Chapter, Inc.</p>
-							<p>UP Center for Student Innovations</p>
-							<p>UP Association of Computer Science Majors</p>
-							<p>Department of Computer Science Servers</p>
-							<p>The UP Parser</p>
+						<div class="cs-net-mems mt-2">
+							<div class="d-flex mb-2">
+								<div class="cs-net-org d-flex mr-2" class="my-auto">
+									<img src="{% static 'main/images/acm-sm.png' %}" class="m-auto">
+								</div>
+								<div class="d-flex flex-column my-auto">
+									<p class="my-auto">Association for Computing Machinery - UP Diliman Student Chapter, Inc.</p>
+									<div class="d-flex mt-2">
+										<a href="https://www.facebook.com/upacm" target="_blank">
+											<i class="fab fa-facebook-f"></i>
+										</a>
+										<a href="https://twitter.com/upacm" target="_blank">
+											<i class="fab fa-twitter mx-2"></i>
+										</a>
+										<a href="http://upacm.net" target="_blank">
+											<i class="fas fa-globe"></i>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="d-flex mb-2">
+								<div class="cs-net-org d-flex mr-2" class="my-auto">
+									<img src="{% static 'main/images/csi-sm.png' %}" class="m-auto">
+								</div>
+								<div class="d-flex flex-column my-auto">
+									<p class="my-auto">UP Center for Student Innovations</p>
+									<div class="d-flex mt-2">
+										<a href="https://www.facebook.com/upcsi" target="_blank">
+											<i class="fab fa-facebook-f"></i>
+										</a>
+										<a href="https://twitter.com/officialupcsi" target="_blank">
+											<i class="fab fa-twitter mx-2"></i>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="d-flex mb-2">
+								<div class="cs-net-org d-flex mr-2" class="my-auto">
+									<img src="{% static 'main/images/cursor-sm.png' %}" class="m-auto">
+								</div>
+								<div class="d-flex flex-column my-auto">
+									<p class="my-auto">UP Association of Computer Science Majors</p>
+									<div class="d-flex mt-2">
+										<a href="https://www.facebook.com/UPCURSOR" target="_blank">
+											<i class="fab fa-facebook-f"></i>
+										</a>
+										<a href="https://twitter.com/UPCURSOR" target="_blank">
+											<i class="fab fa-twitter mx-2"></i>
+										</a>
+										<a href="http://upcursor.com" target="_blank">
+											<i class="fas fa-globe"></i>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="d-flex mb-2">
+								<div class="cs-net-org d-flex mr-2" class="my-auto">
+									<img src="{% static 'main/images/dcss-sm.png' %}" class="m-auto">
+								</div>
+								<div class="d-flex flex-column my-auto">
+									<p class="my-auto">Department of Computer Science Servers</p>
+									<div class="d-flex mt-2">
+										<a href="https://www.facebook.com/up.dcss">
+											<i class="fab fa-facebook-f"></i>
+										</a>
+										<a href="http://cs.upesc.org/dcs-servers">
+											<i class="fas fa-globe ml-2"></i>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="d-flex mb-2">
+								<div class="cs-net-org d-flex mr-2 p-2" class="my-auto">
+									<img src="{% static 'main/images/parser-sm.png' %}" class="m-auto">
+								</div>
+								<div class="d-flex flex-column my-auto">
+									<p class="my-auto">The UP Parser</p>
+									<div class="d-flex mt-2">
+										<a href="https://www.facebook.com/upparser" target="_blank">
+											<i class="fab fa-facebook-f"></i>
+										</a>
+										<a href="https://twitter.com/upparser" target="_blank">
+											<i class="fab fa-twitter mx-2"></i>
+										</a>
+										<a href="http://theupparser.wordpress.com" target="_blank">
+											<i class="fas fa-globe"></i>
+										</a>
+									</div>
+								</div>
+							</div>		
 						</div>
 					</div>
 				</div>
