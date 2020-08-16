@@ -2,7 +2,7 @@
 <header class="csreps-header position-absolute w-100">
 	<nav class="navbar navbar-expand-lg navbar-dark">
 		<div class="container d-flex justify-content-start">
-			<button class="navbar-toggler mr-3 mr-lg-auto btn" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<button class="navbar-toggler mr-3 mr-lg-auto btn d-none" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<i class="fas fa-bars"></i>
 			</button>
 			<a class="navbar-brand d-flex" href="{% url 'main:index' %}">
@@ -10,7 +10,7 @@
 			   <img class="my-auto mx-2" src="{% static 'main/images/dcs-sm.png' %}">
 			</a>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav ml-auto">
+				<ul class="navbar-nav ml-auto d-none">
 					<li class="nav-item active">
 						<a class="nav-link" href="#">About <span class="sr-only">(current)</span></a>
 					</li>

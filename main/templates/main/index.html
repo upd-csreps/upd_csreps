@@ -212,7 +212,7 @@
 				</div>
 			</div>
 
-			<div class="my-5 pt-1">
+			<div class="my-2 pt-1">
 				<div class="row mt-3">
 					<div class="col-lg-4 d-flex order-2 my-auto">
 						<img class="mx-auto" src="{% static 'main/images/cs-net-logo.png' %}" style="height: 15rem">
@@ -332,29 +332,60 @@
 
 			{% if fb_data %}
 			<div class="my-5">
-				<h1 class="font-weight-bold mb-1">
+				<h1 class="font-weight-bold mb-3">
 					<span class="text-green">updates.</span>
 				</h1>
 				
 				<div class="row">
-					<div class="col-lg-3">
-						<h4 class="font-weight-bold">calendar of events</h4>
+					<div class="col-lg-3 order-2">
+						CODEX Soon.
 					</div>
-					<div class="col-lg-9">
-						<p> # Redesign to something inspired from ust website here</p>
-						{% for item in fb_data %}
-						<div class="row my-5">
-							<div class="col-lg-4 d-flex">
-								<a href="{{item.url}}" class="mx-auto">
-									<img src="{{item.media.image.src}}"  style="max-height: 250px;">
-								</a>
+					<div class="col-lg-9 order-1">
+						<div class="csreps-updates">
+							{% for item in fb_data %}
+							<div class="mx-2">
+								<img src="{{item.media.image.src}}"  style="max-height: 150px;">
 							</div>
-							<div class="col-lg-8">
-								{{item.date}}
-								{{item.description|safe|linebreaks}}
-							</div>
+							{% endfor %}
 						</div>
-						{% endfor %}
+						<div class="csreps-updates-content my-3">
+							{% for item in fb_data %}
+								<div>
+									<div class="row">
+										<div class="col-lg-4">
+											<img src="{{item.media.image.src}}"  style="max-height: 100%; max-width: 100%; min-width: 50%; min-width: 50%">
+										</div>
+										<div class="col-lg-8 caption-bg px-0">
+											<div class="caption-content">
+												{{item.description|safe|linebreaks}}
+												<div class="d-flex justify-content-between mt-4">
+													<small class="my-auto d-inline-flex">
+														<i class="fas fa-clock mr-2 my-auto"></i>
+														<span class="my-auto">{{item.date}}</span>
+													</small>
+													<a href="{{item.url}}" class="my-auto">
+														<button class="btn btn-primary d-inline-flex" type="button">
+															<span class="my-auto">Read More</span>
+														</button>
+													</a>
+												</div>
+												{% if item.hashtags|length > 0 %}
+												<hr class="mt-3">
+												<div class="hashtags d-inline-flex flex-wrap">
+													{% for tags in item.hashtags %}
+														<small class="mr-2 py-1 px-2 rounded-pill d-inline-flex" style="background-color: #eaeaea">
+															<i class="fas fa-hashtag my-auto bg-light p-1 rounded-circle"></i>
+															<span class="my-auto mx-2">{{tags}}</span>
+														</small>
+													{% endfor %}
+												</div>
+												{% endif %}
+											</div>
+										</div>
+									</div>
+								</div>
+							{% endfor %}
+						</div>	
 					</div>
 				</div>
 			</div>
@@ -363,7 +394,55 @@
 	</div>
 {% endblock %}
 
+{% block styles %}
+	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css"/>
+	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css"/>
+{% endblock %}
+
 {% block scripts %}
+	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 	<script>
+		$(document).ready(function(){
+		  $('.csreps-updates').slick({
+		  	variableWidth: true,
+		  	centerMode: true,
+			centerPadding: '60px',
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			autoplay: true,
+ 			autoplaySpeed: 5000,
+			responsive: [{
+			  breakpoint: 768,
+			  settings: {
+			    arrows: false,
+			    centerMode: true,
+			    centerPadding: '40px',
+			    slidesToShow: 3
+			  }
+			},
+			{
+			  breakpoint: 480,
+			  settings: {
+			    arrows: false,
+			    centerMode: true,
+			    centerPadding: '40px',
+			    slidesToShow: 1
+			  }
+			}],
+			asNavFor: '.csreps-updates-content',
+			focusOnSelect: true,
+			infinite: true
+		  });
+
+		   $('.csreps-updates-content').slick({
+			  slidesToShow: 1,
+			  slidesToScroll: 1,
+			  arrows: false,
+			  //adaptiveHeight: true,
+			  fade: true,
+			  asNavFor: '.csreps-updates',
+			  infinite: true
+			});
+		});
 	</script>
 {% endblock %}

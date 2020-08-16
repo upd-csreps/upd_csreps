@@ -255,3 +255,32 @@ a:hover{
 .cs-net-mems a:hover{
 	color: #4b6f2c;
 }
+
+.slick-slide{
+	opacity: 0.5;
+	transition: 0.45s;
+}
+
+.slick-slide.slick-active{
+	opacity: 1;
+}
+
+.slick-slide:focus{
+	outline: none;
+}
+
+.csreps-updates-content .caption-bg{
+	background-color: #f5f5f5;
+	border: solid 1px #eee;
+}
+
+.csreps-updates-content .caption-bg .caption-content{
+	padding: 2.25rem;
+	font-size: 0.95rem;
+}
+
+.slick-next:before, .slick-prev:before{
+	color: #080808;
+	font-size: 22px;
+	opacity: 1;
+}
