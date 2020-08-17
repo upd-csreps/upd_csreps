@@ -4,7 +4,7 @@ body{
 	font-family: 'Open Sans', sans-serif;
 	background-color: #f1f1f1;
 	color: #060606;
-	font-size: 1.15rem;
+	font-size: 1.05rem;
 }
 
 .wip-body{
@@ -154,6 +154,19 @@ body{
 	color: white;
 	overflow: hidden;
 	position: relative;
+	border-top: solid 4px #7b1315;
+}
+
+.csreps-footer a{
+	color: white;
+}
+
+.csreps-footer a:hover{
+	color: #efefef;
+}
+
+.csreps-footer .footer-address p, .csreps-footer a{
+	margin-bottom: 0.25rem;
 }
 
 .footer-overlay{
@@ -161,10 +174,15 @@ body{
     background-repeat: no-repeat;
     background-position: right;
     background-size: 37%;
-    opacity: 0.75;
+    opacity: 0.32;
     width: 100%;
     height: 100%;
     position: absolute;
+    z-index: 0
+}
+
+.footer-content{
+	z-index: 55;
 }
 
 .csreps-events{
@@ -276,7 +294,7 @@ a:hover{
 
 .csreps-updates-content .caption-bg .caption-content{
 	padding: 2.25rem;
-	font-size: 0.95rem;
+	font-size: 1.05rem;
 }
 
 .slick-next:before, .slick-prev:before{
