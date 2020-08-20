@@ -2,7 +2,13 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>{% block title %}Computer Science Representatives - Engineering Student Council{% endblock %}</title>
+		<title>
+		{% block title %}
+			{% if app_name %}
+				{{app_name|title}} / 
+			{% endif %}
+			Computer Science Representatives - Engineering Student Council
+		{% endblock %}</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<meta charset="utf-8">
 		<meta name="application-name" content="Computer Science Representatives">
@@ -11,8 +17,9 @@
 		{% block styles %}
 		{% endblock %}
 		<link rel="stylesheet" href="{% static 'main/css/style.css' %}">
-		<link rel="shortcut icon" href="{% static 'main/favicon.ico' %}" type="image/x-icon">
-		<link rel="icon" href="{% static 'main/favicon.ico' %}" type="image/x-icon">
+		<link rel="shortcut icon" href="{% static app_name|add:'/favicon.ico' %}" type="image/x-icon">
+		<link rel="icon" href="{% static app_name|add:'/favicon.ico' %}" type="image/x-icon">
+		
 		<script src="https://kit.fontawesome.com/76d8a563a1.js" crossorigin="anonymous"></script>
 	</head>
 	<body>

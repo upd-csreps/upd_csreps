@@ -1,0 +1,32 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+	<div class="container mt-3 py-5">
+		<div class="row">
+			<div class="col-lg-4">
+				<div class="d-flex mb-3">
+					<img class="my-auto" src="{% static 'main/images/landing/troubleshooter.png' %}" style="height: 70px">
+					<h3 class="my-auto font-weight-bold rounded ml-3">Troubleshooter</h3>
+				</div>
+				<p>
+					Submit your concerns to the CS Representatives and we'll respond to you as soon as possible.
+				</p>
+
+				{% include 'troubleshooter/partials/form.html' %}
+			</div>
+			<div class="col-lg-8">
+				INSERT RESPONSES HERE
+			</div>
+		</div>
+	</div>
+
+
+{% endblock %}
+
+{% block styles %}
+	
+{% endblock %}
+
+{% block scripts %}
+	
+{% endblock %}

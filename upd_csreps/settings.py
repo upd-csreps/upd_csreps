@@ -32,6 +32,8 @@ ALLOWED_HOSTS = ['cs.upesc.org']
 
 INSTALLED_APPS = [
     'main',
+    'codex',
+    'troubleshooter',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -63,6 +65,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'main.contexts.appname',
             ],
         },
     },
@@ -138,3 +141,26 @@ TWITTER_CONSUMER_SECRET = os.environ.get('TWITTER_CONSUMER_SECRET')
 
 TWITTER_ACCESS_TOKEN = os.environ.get('TWITTER_ACCESS_TOKEN')
 TWITTER_SECRET_TOKEN = os.environ.get('TWITTER_SECRET_TOKEN')
+
+# Troubleshooter
+
+GOOGLE_API_SCOPES = [
+    'https://www.googleapis.com/auth/spreadsheets'
+]
+
+GOOGLE_API_RECONNECT_TRIES = 5
+
+TSHOOT_SPREADSHEET = '1CvtndPwxO53BkvbWblIlfvazeu69a3UWGWfU3hVK5rA'
+TSHOOT_CREDS = {
+  "type": "service_account",
+  "project_id": "troubleshooter-286806",
+  "private_key_id": "a6851541530130f88c8121b40e52613a7e364de6",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDGERaEDCn1V8u/\n6cZ1Bc/UEm+et2KLrFp4ZMnddIYFz8TiD1Uh00AGfazcoLzZl+xGePwRDmh4FqPv\ncfwkx9DDA+tUT3K4iQPIiSKimlhF+Ontw4mW6aEQUuy+d6KQmJtJnIMZpDJVkU4e\nmuS4XmPIx57mlHKW7AyzYRP3EsjtGpQsMdQDZ/cDFOG8jWwUhtj3Vm+Ek63szbSn\nu7YyIDfQ4+C/pGNR+2vmkxc/528LQXziVvc/GE//Ds+eNBC3Viid0vVmt3RKUbRY\noW8a6/60OMO79byrGZdRFJRWy0YM4WwGadUP8zXleDHqscrMhUcqf0LkyF3g9TnM\ngUKKy6GvAgMBAAECggEAAwgwIjclDa9iAoVf+5aMa85dG+2l3l+xsR1iIU056CBE\nqajWwp32nQtbZSrzz4ctvWOiRLfoC4/mfwJcc2Se/kIMZq3VmhwJPCg0/jlckXAL\nho95wsElz2iYOvoODvvc7gYLXKefpTrzTZ/EhKBEeeiWx/UIqG3Jnw02BMvupwGz\nu4XhKspFOiqiIjPDQM4my4Px9ZRH7w8orKuhlsR2RnyrACsIhpxVwzeurmaL68Pq\nmqbRbbXcg902VAhct+R4IJKQxBKhYltpB5cTjZCUKTYKH+yx+Majs/t7DqXjkK9p\nKnLZYn8O4w8JWCRaNrNZvcEZtvH0MaqaX5LwK6BFKQKBgQD1jCKvK7WIIreV5kFA\nU0dca25UsDP0LGFI7cCgrkzui5YSvWX401J2KipSGHcYNvfjECY5X34P//JtuGho\ni/ayuPV8saBkAD0j4Z9x1c428Fc0evXv5itgRWkA/G7FAzm+US+4GVb487g8MiLF\nqOZdItbl6lzqdHF2u/aqmM+cCQKBgQDOf4effvIyaFTq/2YOmuTdhXunRYrQE+Si\nNRWQhtCc6+wPEbUOj59C9spS5ktIQ6USZjy7QUCGIzpo8i62GLbaWID19obBlGFT\nBvNORwws2d5YACvTtXj524o0pEhBvnGt1C81ahvJipomkSBhB/gLbC1thwVJLcJq\nDpUE1Dqt9wKBgH3+dh2kM/Wyurjz+S9kjA1kIqzZ7Q6xZwng1SKdzWPpxAvBm31e\nEcYIRMbzPsjyC6g7NSHjWfAjyOV75jce+msidPSSwFYPuU+cChCDQNj34gdPwLpk\nRIWVmBelb8EvsoVxaybv+aysgjCBGU6LKAlKQzKeWycCsOXX9O38kyrhAoGBAIqX\nOx4H5GOCdGPYD9YDjVFDsk78tIKcp1laiWObp8155c/jUYI5UGlwGzByUdppVBO6\nPE5tJ/IfGKewyzr58VcwCTWLRLwNaxh/VLKXqos7miezzbZkWJJRDzvvenNtbvx8\nqUaPNaEZfgYeZv3YjFiWPRMCiMCpjo8BxHAeRFfXAoGAQAgDXtEJR30HCeJ3oAcJ\nIjvBvXrqBx1TEkjuSXM5d3zA8Sh3EK+yoY7P2UJsQBR3t1kNvj+1WZFDY6Jm54Id\nRko7Y7/5uADdY7z47A3xk17hjmJgLvt9/sYSVZJZC3lBtQn07kQMY//6czn6KBf3\njze8ef1EwkCWAJKX1XMUS+g=\n-----END PRIVATE KEY-----\n",
+  "client_email": "troubleshooter@troubleshooter-286806.iam.gserviceaccount.com",
+  "client_id": "107576497280510923611",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/troubleshooter%40troubleshooter-286806.iam.gserviceaccount.com"
+}
+

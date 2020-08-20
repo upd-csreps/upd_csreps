@@ -1,0 +1,107 @@
+<form class="troubleshooter-form mt-5" action="{% url 'troubleshooter:index' %}" method="post" enctype="multipart/form-data">
+	{% csrf_token %}
+	<div class="form-group">
+		<label for="alias">
+			<span >Name</span>
+			<span class="text-green ml-1">*</span>
+		</label>
+		<input type="text" class="form-control" id="alias" name="alias" aria-describedby="aliasHelp" placeholder="Enter name" required>
+		<small id="aliasHelp" class="form-text text-muted">You may use your real name or an alias to be anonymous.</small>
+	</div>
+	<div class="form-group">
+		<label for="concerns">
+			<span>Concern Type</span>
+			<span class="text-green ml-1">*</span>
+		</label>
+
+		<select class="form-control" id="concerns" name="concerns">
+		{% for type in concern_type %}
+			<option value="{{forloop.counter0}}" {% if forloop.counter0 == 0 %}selected{% endif%}>
+				{{type}}
+			</option>
+		 {% endfor %}
+		</select>
+
+		<div class="concerns-help">
+			<small class="form-text text-muted">
+			  	Select this if no other type fits your concern.
+			</small>
+			<small class="form-text text-muted d-none">
+			  	Incomplete grade updates, class inquiries, class petitions, graduation processes, registration, thesis, lab drafting, internship procedures, etc.
+			</small>
+			<small class="form-text text-muted d-none">
+			  	Concerns about the department lab facilities or classrooms.
+			</small>
+			<small class="form-text text-muted d-none">
+			  	Question, concerns or suggestions for the events, locker system, academic review sessions, IGPs, application for volunteer corps (DCS Servers, The UP Parser), etc. 
+			</small>
+			<small class="form-text text-muted d-none">
+			  	Inquiries on about the student organizations or anything related to the CS Network.
+			</small>
+			<small class="form-text text-muted d-none">
+			  	Problems or suggestions about the community ex. noise, security, batches, faculty, student, admin, staff, etc.
+			</small>
+		</div>
+	</div>
+	<div class="form-group">
+	    <label for="concerns-details">
+	    	<span>Details</span>
+			<span class="text-green ml-1">*</span>
+	    </label>
+	    <textarea class="form-control" id="concerns-details" rows="4" name="concerns-details" required></textarea>
+	    <small id="detailsHelp" class="form-text text-muted">All the details we may need about the concern.</small>
+	</div>
+
+	<div class="form-group">
+	    <label for="attachment">
+	    	<span>Attachments</span>
+	    </label>
+		<input type="file" class="form-control-file" id="attachment" name="attachment" multiple>
+	</div>
+
+	<div class="form-group">
+		<label for="email">
+			<span>E-mail</span>
+			<span class="text-green ml-1">*</span>
+		</label>
+		<input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter e-mail" required>
+		<small id="emailHelp" class="form-text text-muted">An e-mail we can contact you with.</small>
+	</div>
+
+	<div class="form-group">
+		<label for="phone">
+			<span>Contact Number</span>
+			<span class="text-green ml-1">*</span>
+		</label>
+		<input type="text" class="form-control" id="phone" name="phone" aria-describedby="phoneHelp" placeholder="Enter contact number" required>
+		<small id="phoneHelp" class="form-text text-muted">A contact number we can contact you with.</small>
+	</div>
+
+	<div class="form-group">
+	    <label for="message">
+	    	<span>Message</span>
+	    </label>
+	    <textarea class="form-control" id="message" rows="4" name="message" required></textarea>
+	     <small id="messageHelp" class="form-text text-muted">Do you have any additional messages for us?</small>
+	</div>
+
+	<div class="form-group">
+		<div class="form-check custom-control custom-checkbox">
+		  <input class="form-check-input custom-control-input" type="checkbox" value="true" id="consultation" name="consultation">
+		  <label class="form-check-label custom-control-label" for="consultation">
+		    Set up a consultation
+		  </label>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<div class="form-check custom-control custom-checkbox">
+		  <input class="form-check-input custom-control-input" type="checkbox" value="true" id="hideResponse" name="hideResponse">
+		  <label class="form-check-label custom-control-label" for="hideResponse">
+		    Hide response 
+		  </label>
+		</div>
+	</div>
+
+  <button type="submit" class="btn btn-primary float-right mt-3">Submit</button>
+</form>

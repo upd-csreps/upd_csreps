@@ -20,11 +20,6 @@
 				</div>
 			</div>
 		</div>
-		<div class="position-absolute landing-bg-credits w-100 h-100 d-flex">
-			<div class="container mt-auto mb-3">
-				<small class="text-right">Photo by Ramon F. Velasquez</small>
-			</div>
-		</div>
 	</div>
 	<div class="after-landpage">
 		<div class="container">
@@ -343,8 +338,8 @@
 					<div class="col-lg-9 order-1">
 						<div class="csreps-updates">
 							{% for item in fb_data %}
-							<div class="mx-2">
-								<img src="{{item.media.image.src}}"  style="max-height: 150px;">
+							<div class="mx-auto mx-lg-2">
+								<img src="{{item.media.image.src}}" class="text-center"  style="max-height: 150px;">
 							</div>
 							{% endfor %}
 						</div>

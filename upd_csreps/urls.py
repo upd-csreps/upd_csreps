@@ -19,9 +19,10 @@ from django.urls import include,path
 urlpatterns = [
     #path('admin/', admin.site.urls),
     path('', include('main.urls')),
+    path('troubleshooter/', include('troubleshooter.urls')),
 ]
 
-handler400 = 'main.views.wip_redirect'
-handler403 = 'main.views.wip_redirect'
-handler404 = 'main.views.wip_redirect'
-handler500 = 'main.views.wip_redirect'
+handler400 = 'main.views.wip'
+handler403 = 'main.views.wip'
+handler404 = 'main.views.wip'
+handler500 = 'main.views.wip'

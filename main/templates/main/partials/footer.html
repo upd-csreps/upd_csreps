@@ -4,7 +4,7 @@
 	<div class="d-flex flex-column">
 		<div class="container py-4 px-3 footer-content">
 			<div class="d-flex justify-content-between mb-4 py-2">
-				<div class="d-inline-flex my-auto">
+				<div class="d-inline-flex my-auto mx-auto mx-lg-0">
 					<img class="my-auto mr-2" src="{% static 'main/images/esc-sm.png' %}" style="height: 50px;"> 
 					<img class="my-auto mr-2" src="{% static 'main/images/dcs-sm.png' %}" style="height: 50px;">
 					<div class="my-auto ml-2 d-flex flex-column">
@@ -13,13 +13,14 @@
 					</div> 
 				</div>
 			</div>
-			<div class="row my-4">
-				<div class="col-lg-4 pb-3">
-					<div class="d-flex mb-4 flex-column">
-						<div class="d-flex mb-2">
-							<h5 class="font-weight-bold h5">reach us.</h5>
-							<i class="fas fa-map-marked-alt ml-2 mt-1"></i>
-						</div>
+			<div class="row my-4 text-center text-lg-left">
+				<div class="col-lg-4 pb-3 mb-3">
+					<div class="d-flex flex-column">
+						<h5 class="font-weight-bold h5">
+							<span>reach us.</span>
+							<i class="fas fa-map-marked-alt mt-1"></i>
+						</h5>
+							
 						<div class="footer-address">
 							<p>Room 123, Melchor Hall</p>
 							<p>University of the Philippines Diliman</p>
@@ -27,7 +28,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-4">
+				<div class="col-lg-4 mb-3">
 					<h5 class="font-weight-bold h5">
 						<span>our services.</span>
 						<i class="fas fa-concierge-bell h6"></i>
@@ -35,18 +36,18 @@
 
 					<div class="d-flex flex-column">
 						<a href="#" target="_blank">CODEX</a>
-						<a href="#" target="_blank">Troubleshooter</a>
+						<a href="{% url 'troubleshooter:index' %}" target="_blank">Troubleshooter</a>
 						<a href="#" target="_blank">Import *</a>
 						<a href="#" target="_blank">The UP Parser</a>
 					</div>
 				</div>
-				<div class="col-lg-4">
+				<div class="col-lg-4 mb-3">
 					<h5 class="font-weight-bold h5">
 						<span>university links.</span>
 						<i class="fas fa-external-link-alt h6"></i>
 					</h5>
 					<div class="d-flex flex-column">
-						<a href="http://upesc.org" target="_blank">UP Engineering Student Council</a>
+						<a href="http://www.upesc.org" target="_blank">UP Engineering Student Council</a>
 						<a href="http://dcs.upd.edu.ph" target="_blank">Department of Computer Science</a>
 						<a href="http://coe.upd.edu.ph" target="_blank">UPD College of Engineering</a>
 						<a href="http://upd.edu.ph" target="_blank">University of the Philippines Diliman</a>
@@ -54,11 +55,11 @@
 				</div>
 			</div>
 			<div class="my-3 pt-3" style="border-top: 1px solid white;"></div>
-			<div class="d-flex justify-content-between my-3">
-				<span class="my-auto">
+			<div class="d-flex flex-column flex-lg-row justify-content-between my-3 text-center text-lg-left">
+				<span class="my-lg-auto my-2">
 					© UP Engineering Student Council
 				</span>
-				<div class="my-auto">
+				<div class="my-lg-auto my-2">
 					<a href="https://www.facebook.com/up.csreps" class="d-inline-flex">
 						<i class=" m-auto fab fa-facebook-f h5"></i>
 					</a>

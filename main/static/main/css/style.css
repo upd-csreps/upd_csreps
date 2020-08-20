@@ -49,7 +49,7 @@ body{
 }
 
 .landing-bg{
-	background-image: url('../images/landing/comsci-bg.jpg');
+	background-image: url('../images/landing/new-cs-bg.png');
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -82,7 +82,7 @@ body{
 	background-color: #166735; 
 	height: 100%;
 	width: 100%;
-	opacity: 0.42;
+	opacity: 0.38;
 	position: absolute;
 	border-bottom: #7b1315 5px solid;
 }
@@ -173,7 +173,7 @@ body{
 	background-image: url(../images/landing/botright-vector.png);
     background-repeat: no-repeat;
     background-position: right;
-    background-size: 37%;
+    background-size: 38%;
     opacity: 0.32;
     width: 100%;
     height: 100%;
@@ -248,6 +248,7 @@ body{
 
 .btn{
 	border-radius: 0;
+	box-shadow: none !important;
 }
 
 .btn-primary{
@@ -256,8 +257,8 @@ body{
 }
 
 .btn-primary:hover, .btn-primary:active, .btn-primary:focus{
-	background-color: #4b6f2c;
-	border-color: #f7961d;
+	background-color: #4b6f2c !important;
+	border-color: #f7961d !important;
 }
 
 a:hover{
@@ -302,3 +303,74 @@ a:hover{
 	font-size: 22px;
 	opacity: 1;
 }
+
+.form-control{
+	border-radius: 0;
+	border: none;
+}
+
+.form-control:not(textarea){
+	background: transparent;
+	border-bottom: 1px solid #ddd;
+}
+
+.form-control:not(textarea):focus{
+	background: transparent;
+	border-bottom: 2px solid #166735;
+	box-shadow: none;
+}
+
+.troubleshooter-form label:not(.form-check-label){
+	font-weight: 600;
+}
+
+input[type='radio']:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    top: -5px;
+    left: -1px;
+    position: relative;
+    background-color: #fefefe;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 4px solid white;
+}
+
+input[type='radio']:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    top: -5px;
+    left: -1px;
+    position: relative;
+    background-color: #166735;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 4px solid white;
+}
+
+.custom-control-input:checked~.custom-control-label::before{
+	background-color: #166735;
+	border-color: #166735;
+}
+
+.custom-control-input~.custom-control-label::before{
+	border-radius: 0;
+	border: none;
+}
+
+.custom-control-input:focus~.custom-control-label::before{
+	box-shadow: none;
+}
+
+.custom-control-input:active~.custom-control-label::before{
+	background-color: #f7e68f !important;
+}
+
+.custom-control-label{
+	cursor: pointer;
+}
+

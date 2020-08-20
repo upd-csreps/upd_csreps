@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.conf import settings
 from django.template.loader import render_to_string
-from datetime import datetime
 import iso8601
 import re
 
@@ -10,7 +9,7 @@ import requests
 
 # Create your views here.
 
-def wip(request):
+def wip(request, exception=None):
 	context = {}
 	return render(request, 'main/wip.html', context)
 
@@ -85,6 +84,3 @@ def index(request):
 
 	context = {'fb_data': fb_content}
 	return render(request, 'main/index.html', context)
-
-def wip_redirect(request, exception=None):
-	return redirect('main:wip', permanent=True)
