@@ -1,0 +1,92 @@
+{% extends 'main/base_admin.html' %}
+{% load static %}
+{% block content %}
+	<div class="site-container d-flex">
+		<div class="container h-100 d-flex m-auto">
+			<div class="m-auto">
+				<h1 class="text-center text-green font-weight-bold">dashboard.</h1>
+
+				<h5 class="my-3">Web Site & Services</h5>
+				<div class="d-flex flex-wrap">
+					<a class="#">
+						<button class="dashboard-button" style="background-color: #6a6a6a">
+							<img src="{% static 'main/images/landing/codex.png' %}">
+							<div class="caption">
+								<span>CODEX</span>
+							</div>
+						</button>
+					</a>
+					<a href="{% url 'admin:troubleshooter' %}">
+						<button class="dashboard-button" style="background-color: #923022">
+							<img src="{% static 'main/images/landing/troubleshooter.png' %}">
+							
+							<div class="caption">
+								<span>Troubleshooter</span>
+							</div>
+						</button>
+					</a>
+					<a href="#">
+						<button class="dashboard-button" style="background-color: #00aced">
+							<i class="fab fa-twitter"></i>
+							<div class="caption">
+								<span>Twitter Automation</span>
+							</div>
+						</button>
+					</a>
+					<a href="#">
+						<button class="dashboard-button" style="background-color: #166735">
+							<i class="fas fa-cogs"></i>
+							<div class="caption">
+								<span>Site Settings</span>
+							</div>
+						</button>
+					</a>
+					<a href="{% url 'main:logout' %}">
+						<button class="dashboard-button" style="background-color: black">
+							<i class="fas fa-sign-out-alt"></i>
+							<div class="caption">
+								<span>Logout</span>
+							</div>
+						</button>
+					</a>
+				</div>
+
+				<h5 class="my-3">Links</h5>
+				<div class="d-flex flex-wrap">
+					<a class="#">
+						<button class="dashboard-button" style="background-color: #D44638">
+							<i class="fas fa-envelope"></i>
+							<div class="caption">
+								<span>Mail</span>
+							</div>
+						</button>
+					</a>
+					<a href="https://drive.google.com/drive/folders/1VzGgKOt240HS66ly9n5OZDGm0G7yQ_z0" target="_blank">
+						<button class="dashboard-button" style="background-color: #FFD04B">
+							<i class="fab fa-google-drive"></i>
+							<div class="caption">
+								<span>Google Drive</span>
+							</div>
+						</button>
+					</a>
+					<a href="https://docs.google.com/spreadsheets/d/1PdvaAJ-7TibPj2ceZK0SLD4fL5kF4afzn87QfMCgh18/edit" target="_blank">
+						<button class="dashboard-button" style="background-color: #444">
+							<i class="fas fa-list"></i>
+							<div class="caption">
+								<span>Assets Directory</span>
+							</div>
+						</button>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+{% block styles %}
+
+{% endblock %}
+
+{% block scripts %}
+	
+{% endblock %}

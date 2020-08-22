@@ -40,6 +40,10 @@ body{
 	text-decoration: none;
 }
 
+.login-logo{
+	color: #060606 !important;
+}
+
 .csreps-header, .csreps-footer{
 	z-index: 100;
 }
@@ -103,8 +107,8 @@ body{
 	color: #f7961d;
 }
 
-.container{
-	max-width: 1275px;
+.landing-content .top-text{
+	letter-spacing: 5px;
 }
 
 .landing-bg-credits{
@@ -136,6 +140,22 @@ body{
 
 .after-landpage{
 	border-top: solid 3px #cddccd;
+}
+
+.csreps-projects .project-image, .csreps-projects .project-image-long{
+	margin-bottom: 1.25rem;
+}
+
+.csreps-projects .project-image{
+	width: 45%;
+}
+
+.csreps-projects .project-image-long{
+	width: 75%;
+}
+
+.cs-net-logo{
+	height: 15rem;
 }
 
 .text-green{
@@ -172,9 +192,9 @@ body{
 .footer-overlay{
 	background-image: url(../images/landing/botright-vector.png);
     background-repeat: no-repeat;
-    background-position: right;
-    background-size: 38%;
-    opacity: 0.32;
+    background-position: bottom right;
+    background-size: 40%;
+    opacity: 0.30;
     width: 100%;
     height: 100%;
     position: absolute;
@@ -202,6 +222,7 @@ body{
 	transition: 0.15s ease-in-out;
 	overflow: hidden;
 	position: relative;
+	background-repeat: no-repeat;
 }
 
 .csreps-events .bg-pic:hover{
@@ -374,3 +395,146 @@ input[type='radio']:checked:after {
 	cursor: pointer;
 }
 
+/* Admin Dashboard */
+
+.dashboard-button{
+	height: 125px;
+	width: 125px;
+	color: white;
+	font-size: 50px;
+	display: flex;
+	margin-right: 0.75rem;
+	margin-bottom: 0.75rem;
+	transition: 0.15s ease-in-out;
+	border: solid 1px transparent;
+	outline: none;
+}
+
+.dashboard-button img{
+	max-height: 58px;
+	transition: 0.15s ease-in-out;
+}
+
+.dashboard-button:focus{
+	border:0 !important;
+	outline: none !important
+}
+
+
+.dashboard-button:hover{
+	font-size: 60px;
+	border: solid 1px #f7961d;
+}
+
+.dashboard-button:hover img{
+	max-height: 68px;
+}
+
+.dashboard-button i, .dashboard-button img{
+	margin: auto;
+}
+
+.dashboard-button .caption{
+	font-size: 1rem;
+	position: absolute;
+	height: inherit;
+	width: inherit;
+	text-align: left;
+}
+
+.dashboard-button span{
+	position: relative;
+	top: 78.5%;
+	font-size: 70%;
+	margin: 0;
+}
+
+@media (min-width: 1280px){
+	.container, .container-lg, .container-md, .container-sm, .container-xl{
+		max-width: 1275px;
+	}
+}
+
+@media (max-width: 576px){
+	body{
+		font-size: 0.925rem;
+	}
+
+	h1,.h1{
+		font-size: 2.25rem;
+	}
+
+	h2, .h2{
+		font-size: 1.75rem;
+	}
+
+	h3, .h3{
+		font-size: 1.5rem;
+	}
+
+	h4, .h4{
+		font-size: 1.25rem;
+	}
+
+	h5, .h5{
+		font-size: 1rem;
+	}
+
+	h6, .h6{
+		font-size: 0.925rem;
+	}
+
+	.landing-content .top-text{
+		letter-spacing: 2px;
+	}
+
+	.landing-content .title, .landing-content .subtext{
+		font-size: 2rem;
+		text-align: center;
+	}
+
+	.landing-socmed{
+		font-size: 1.35rem;
+	}
+
+	.csreps-events .bg-pic{
+		background-size: cover;
+	}
+
+	.csreps-projects .project-image, .csreps-projects .project-image-long{
+		width: 107%;
+	}
+
+	.cs-net-logo{
+		height: 8.25rem;
+	}
+
+	.cs-net-mems p{
+		font-size: 0.8rem;
+	}
+
+	.csreps-updates-content .caption-bg .caption-content{
+		font-size: 0.9rem;
+	}
+}
+
+@media (max-width: 350px){
+	body{
+		font-size: 0.85rem;
+	}
+
+	.landing-content .top-text{
+		letter-spacing: 2px;
+		font-size: 0.47rem;
+	}
+
+	.landing-content .title, .landing-content .subtext{
+		font-size: 1.4rem;
+		text-align: center;
+	}
+
+	.csreps-updates-content .caption-bg .caption-content{
+		font-size: 0.8rem;
+	}
+
+}

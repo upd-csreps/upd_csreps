@@ -1,0 +1,39 @@
+{% extends 'main/base_admin.html' %}
+{% load static %}
+{% block content %}
+	<div class="site-container d-flex">
+		<div class="container h-100 d-flex m-auto">
+			<div class="m-auto w-100 d-flex flex-column">
+				<div class="d-flex justify-content-between py-2 mx-auto">
+					<a href="{% url 'main:index' %}" class="login-logo d-inline-flex my-auto mx-auto mx-lg-0">
+						<img class="my-auto mr-2" src="{% static 'main/images/esc-sm.png' %}" style="height: 50px;"> 
+						<img class="my-auto mr-2" src="{% static 'main/images/dcs-sm.png' %}" style="height: 50px;">
+						<div class="my-auto ml-2 d-none d-lg-flex flex-column">
+							<small class="mb-1" style="letter-spacing: 3.3px;">UNIVERSITY OF THE PHILIPPINES DILIMAN</small>
+							<span class="font-weight-bold h5">COMPUTER SCIENCE REPRESENTATIVES</span>
+						</div> 
+					</a>
+				</div>
+				<form class="login-form mt-4 w-50 mx-auto" action="{% url 'main:login' %}" method="post">
+					{% csrf_token %}
+					<div class="form-group">
+						<label for="usermail">
+							<span>Username or E-mail</span>
+							<span class="text-green ml-1">*</span>
+						</label>
+						<input type="text" class="form-control" id="usermail" name="usermail" placeholder="Enter username or e-mail" required>
+					</div>
+					<div class="form-group">
+						<label for="password">
+							<span >Password</span>
+							<span class="text-green ml-1">*</span>
+						</label>
+						<input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
+					</div>
+
+				  <button type="submit" class="btn btn-primary float-right mt-3">Login</button>
+				</form>
+			</div>
+		</div>
+	</div>
+{% endblock %}

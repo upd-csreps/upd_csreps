@@ -5,8 +5,8 @@
 		<div class="row">
 			<div class="col-lg-4">
 				<div class="d-flex mb-3">
-					<img class="my-auto" src="{% static 'main/images/landing/troubleshooter.png' %}" style="height: 70px">
-					<h3 class="my-auto font-weight-bold rounded ml-3">Troubleshooter</h3>
+					<img class="my-auto rounded" src="{% static 'main/images/landing/troubleshooter.png' %}" style="height: 64px">
+					<h2 class="my-auto font-weight-bold ml-3 text-green">troubleshooter.</h2>
 				</div>
 				<p>
 					Submit your concerns to the CS Representatives and we'll respond to you as soon as possible.
@@ -15,7 +15,15 @@
 				{% include 'troubleshooter/partials/form.html' %}
 			</div>
 			<div class="col-lg-8">
-				INSERT RESPONSES HERE
+				{% for concern in concerns %}
+					<div class="mb-3 p-3 bg-light">
+						{{concern.date}}
+						{{concern.alias}}
+						{{concern.type}}
+						{{concern.details}}
+						{{concern.answer}}
+					</div>
+				{% endfor %}
 			</div>
 		</div>
 	</div>
@@ -24,9 +32,22 @@
 {% endblock %}
 
 {% block styles %}
-	
 {% endblock %}
 
 {% block scripts %}
-	
+	<script async>
+		var request;
+		if (request)
+			request.abort();
+		
+		request =  $.ajax({
+			type: 'post',
+			url: '{% url "troubleshooter:index" %}?act=response',
+			cache: true,
+			headers: {'X-CSRFToken': '{{csrf_token}}' },
+			success: function (response, status, xhr){
+				console.log(response);
+		    }
+		});
+	</script>
 {% endblock %}
