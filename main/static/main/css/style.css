@@ -309,7 +309,7 @@ a:hover{
 	outline: none;
 }
 
-.csreps-updates-content .caption-bg{
+.csreps-updates-content .caption-bg, .enclosing{
 	background-color: #f5f5f5;
 	border: solid 1px #eee;
 }
@@ -317,6 +317,10 @@ a:hover{
 .csreps-updates-content .caption-bg .caption-content{
 	padding: 2.25rem;
 	font-size: 1.05rem;
+}
+
+.hashtag{
+	background-color: #eaeaea;
 }
 
 .slick-next:before, .slick-prev:before{
@@ -449,6 +453,32 @@ input[type='radio']:checked:after {
 	margin: 0;
 }
 
+.loader {
+  border: 5px solid #f2f2f2; /* Light grey */
+  border-top: 5px solid #166735; /* Green */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 0.75s linear infinite;
+}
+
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+	background-color: #166735;
+}
+
+
+.nav-pills .nav-link{
+	color: #166735;
+	border-radius: 0;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
 @media (min-width: 1280px){
 	.container, .container-lg, .container-md, .container-sm, .container-xl{
 		max-width: 1275px;
@@ -484,6 +514,10 @@ input[type='radio']:checked:after {
 		font-size: 0.925rem;
 	}
 
+	.landing-bg .right-vector{
+		background-size: 95%
+	}
+
 	.landing-content .top-text{
 		letter-spacing: 2px;
 	}
@@ -495,6 +529,11 @@ input[type='radio']:checked:after {
 
 	.landing-socmed{
 		font-size: 1.35rem;
+	}
+
+	.landing-socmed a{
+		width: 3.5rem;
+		height: 3.5rem;
 	}
 
 	.csreps-events .bg-pic{
@@ -516,9 +555,14 @@ input[type='radio']:checked:after {
 	.csreps-updates-content .caption-bg .caption-content{
 		font-size: 0.9rem;
 	}
+
+	.footer-overlay{
+		background-size: 210%;
+		background-position: bottom;
+	}
 }
 
-@media (max-width: 350px){
+@media (max-width: 376px){
 	body{
 		font-size: 0.85rem;
 	}
@@ -529,7 +573,7 @@ input[type='radio']:checked:after {
 	}
 
 	.landing-content .title, .landing-content .subtext{
-		font-size: 1.4rem;
+		font-size: 1.75rem;
 		text-align: center;
 	}
 
@@ -537,4 +581,10 @@ input[type='radio']:checked:after {
 		font-size: 0.8rem;
 	}
 
+}
+
+@media (max-width: 330px){
+	.landing-content .title, .landing-content .subtext{
+		font-size: 1.4rem;
+	}	
 }

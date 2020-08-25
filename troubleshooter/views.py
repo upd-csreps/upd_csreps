@@ -48,11 +48,32 @@ def sheet_query(page_ct=1, ql_command='select *'):
 
 def admin(request):
 	if request.method == 'GET':
-		concerns = sheet_query(ql_command="select * where L == ''")
-		context = {'concerns': concerns}
+		context = {}
 		return render(request, 'troubleshooter/admin.html', context)
 	elif request.method == 'POST':
-		concerns = sheet_query(ql_command="select * where L == ''")
+
+		if request.GET.get('act', None) == "concerns":
+			concerns = sheet_query(ql_command="select * where L = ''")
+
+			if type(concerns) != 'int':
+				new_concerns = []
+				for concern in concerns:
+					new_concerns.append({'date': concern[0],
+						'alias': concern[1],
+						'type': concern[2],
+						'details': concern[3],
+						'attachment': concern[4],
+						'email': concern[5],
+						'number': concern[6],
+						'message': concern[7],
+						'consultation': (concern[8] == 'TRUE'),
+						'hidden': (concern[9] == 'TRUE'),
+						'token' : concern[10]
+					})
+				# context['concerns'] = new_concerns
+
+				return JsonResponse({'response': new_concerns})
+
 		return None
 		
 def index(request):
