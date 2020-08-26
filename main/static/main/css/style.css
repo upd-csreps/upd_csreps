@@ -462,6 +462,10 @@ input[type='radio']:checked:after {
   animation: spin 0.75s linear infinite;
 }
 
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link{
 	background-color: #166735;
@@ -473,10 +477,14 @@ input[type='radio']:checked:after {
 	border-radius: 0;
 }
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+.troubleshooter-response{
+	font-size: 90%;
 }
+
+.troubleshooter-response .details{
+	background-color: #ccdfee;
+}
+
 
 
 @media (min-width: 1280px){
