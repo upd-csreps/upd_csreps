@@ -19,6 +19,22 @@ class Command(BaseCommand):
 
 		previous_tweet_time = None
 		twitter_handles = ["UP_ESC", "upparser"]
+		banned_twitter_handles = [
+			"ce_reps",
+			"me_reps", 
+			"GEreps",
+			"MMMreps",
+			"iereps",
+			"chereps",
+			"eeerepsofficial",
+			"upacm", 
+			"UPCURSOR", 
+			"officialupcsi",
+			"ph_sentinel",
+			"ICEupdiliman",
+			"official_DMMME",
+			"upeeei"
+		]
 
 		for account_name in twitter_handles:
 			for status in tweepy.Cursor(api.user_timeline, id=account_name, user_id=account_name).items(7):
@@ -35,8 +51,12 @@ class Command(BaseCommand):
 					# If the source retweet is already retweeted.
 				    if (status.retweeted_status.retweeted):
 				    	retweeted = True
+				    # If not yet retweeted, check if retweet source is not self or banned accounts.
+				    else:
 				    	if status.retweeted_status.user == api.me():
 				    		retweet_is_own = True
+				    	elif status.retweeted_status.user.screen_name in banned_twitter_handles:
+				    		continue
 				except AttributeError:  # Not a Retweet from Page
 				    if (status.retweeted):
 				    	retweeted = True
