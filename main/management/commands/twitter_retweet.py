@@ -51,12 +51,9 @@ class Command(BaseCommand):
 					# If the source retweet is already retweeted.
 				    if (status.retweeted_status.retweeted):
 				    	retweeted = True
-				    # If not yet retweeted, check if retweet source is not self or banned accounts.
-				    else:
-				    	if status.retweeted_status.user == api.me():
-				    		retweet_is_own = True
-				    	elif status.retweeted_status.user.screen_name in banned_twitter_handles:
-				    		continue
+				    # If not yet retweeted, ignore tweet if retweet source is self or banned accounts.
+				    elif (status.retweeted_status.user == api.me()) or (status.retweeted_status.user.screen_name in banned_twitter_handles):
+				    	continue
 				except AttributeError:  # Not a Retweet from Page
 				    if (status.retweeted):
 				    	retweeted = True
