@@ -16,7 +16,7 @@ class Command(BaseCommand):
 		api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True, timeout=15)
 
 		previous_tweet_time = None
-		twitter_handles = ["UP_ESC", "upparser"]
+		twitter_handles = ["UP_ESC", "upparser", "UPCAPES"]
 		banned_twitter_handles = [
 			"ce_reps",
 			"me_reps", 
