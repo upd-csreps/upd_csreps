@@ -13,10 +13,16 @@ class Command(BaseCommand):
 		auth = tweepy.OAuthHandler(settings.TWITTER_CONSUMER_KEY, settings.TWITTER_CONSUMER_SECRET)
 		auth.set_access_token(settings.TWITTER_ACCESS_TOKEN, settings.TWITTER_SECRET_TOKEN)
 
-		api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True, timeout=15)
+		api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
 
 		previous_tweet_time = None
-		twitter_handles = ["UP_ESC", "upparser", "UPCAPES"]
+		twitter_handles = [
+			"UP_ESC", 
+			"upparser", 
+			"UPCAPES", 
+			"upcs"
+		]
+
 		banned_twitter_handles = [
 			"ce_reps",
 			"me_reps", 
@@ -49,7 +55,7 @@ class Command(BaseCommand):
 					if (status.retweeted_status.retweeted):
 						retweeted = True
 					# If not yet retweeted, ignore tweet if retweet source is self or banned accounts.
-					elif (status.retweeted_status.user == api.me()) or (status.retweeted_status.user.screen_name in banned_twitter_handles):
+					elif (status.retweeted_status.user.screen_name == api.me().screen_name) or (status.retweeted_status.user.screen_name in banned_twitter_handles):
 						continue
 				except AttributeError:  # Not a Retweet from Page
 					if (status.retweeted):
