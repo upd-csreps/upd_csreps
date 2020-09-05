@@ -41,7 +41,7 @@ class Command(BaseCommand):
 		]
 
 		for account_name in twitter_handles:
-			for status in tweepy.Cursor(api.user_timeline, id=account_name, user_id=account_name).items(7):
+			for status in reversed(tweepy.Cursor(api.user_timeline, id=account_name, user_id=account_name).items(7)):
 				status = api.get_status(status.id, tweet_mode="extended")
 				retweeted = False
 				lacks_time = False
@@ -64,7 +64,7 @@ class Command(BaseCommand):
 				# Checking if time between tweets are at least 90 minutes.
 				# This is to avoid live tweets being retweeted.
 				if previous_tweet_time:
-					elapsed_minutes = (previous_tweet_time - status.created_at).total_seconds()//60
+					elapsed_minutes = (status.created_at - previous_tweet_time).total_seconds()//60
 					if elapsed_minutes < 90:
 						lacks_time = True 
 
