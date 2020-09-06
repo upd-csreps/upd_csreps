@@ -41,8 +41,13 @@ class Command(BaseCommand):
 		]
 
 		for account_name in twitter_handles:
-			for status in reversed(tweepy.Cursor(api.user_timeline, id=account_name, user_id=account_name).items(7)):
-				status = api.get_status(status.id, tweet_mode="extended")
+			statuses = []
+			for status in tweepy.Cursor(api.user_timeline, id=account_name, user_id=account_name).items(7):
+				statuses.append(status.id)
+
+			# Reversing so that earliest tweet is evaluated first.
+			for status_id in reversed(statuses):
+				status = api.get_status(status_id, tweet_mode="extended")
 				retweeted = False
 				lacks_time = False
 				is_reply = bool(status.in_reply_to_status_id)
