@@ -42,39 +42,43 @@ class Command(BaseCommand):
 
 		for account_name in twitter_handles:
 			statuses = []
-			for status in tweepy.Cursor(api.user_timeline, id=account_name, user_id=account_name).items(7):
+			for status in tweepy.Cursor(api.user_timeline, id=account_name, user_id=account_name).items(8):
 				statuses.append(status.id)
+			statuses.reverse()
 
 			# Reversing so that earliest tweet is evaluated first.
-			for status_id in reversed(statuses):
-				status = api.get_status(status_id, tweet_mode="extended")
-				retweeted = False
-				lacks_time = False
-				is_reply = bool(status.in_reply_to_status_id)
+			for index in range(0, len(statuses)):
+				status = api.get_status(statuses[index], tweet_mode="extended")
 
-				 #If tweet date is > 10 days from now
-				too_old = ((datetime.datetime.now() - status.created_at).days > 10)
+				# First tweet buffer is just for reference of previous tweet time.
+				if index > 0:
+					retweeted = False
+					lacks_time = False
+					is_reply = bool(status.in_reply_to_status_id)
 
-				try:
-					# If the source retweet is already retweeted.
-					if (status.retweeted_status.retweeted):
-						retweeted = True
-					# If not yet retweeted, ignore tweet if retweet source is self or banned accounts.
-					elif (status.retweeted_status.user.screen_name == api.me().screen_name) or (status.retweeted_status.user.screen_name in banned_twitter_handles):
-						continue
-				except AttributeError:  # Not a Retweet from Page
-					if (status.retweeted):
-						retweeted = True
+					 #If tweet date is > 10 days from now
+					too_old = ((datetime.datetime.now() - status.created_at).days > 10)
 
-				# Checking if time between tweets are at least 90 minutes.
-				# This is to avoid live tweets being retweeted.
-				if previous_tweet_time:
-					elapsed_minutes = (status.created_at - previous_tweet_time).total_seconds()//60
-					if elapsed_minutes < 90:
-						lacks_time = True 
+					try:
+						# If the source retweet is already retweeted.
+						if (status.retweeted_status.retweeted):
+							retweeted = True
+						# If not yet retweeted, ignore tweet if retweet source is self or banned accounts.
+						elif (status.retweeted_status.user.screen_name == api.me().screen_name) or (status.retweeted_status.user.screen_name in banned_twitter_handles):
+							continue
+					except AttributeError:  # Not a Retweet from Page
+						if (status.retweeted):
+							retweeted = True
 
-				if not (retweeted or is_reply or lacks_time or too_old):
-					status.retweet()
+					# Checking if time between tweets are at least 90 minutes.
+					# This is to avoid live tweets being retweeted.
+					if previous_tweet_time:
+						elapsed_minutes = (status.created_at - previous_tweet_time).total_seconds()//60
+						if elapsed_minutes < 90:
+							lacks_time = True 
+
+					if not (retweeted or is_reply or lacks_time or too_old):
+						status.retweet()
 
 				previous_tweet_time = status.created_at
 
