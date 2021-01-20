@@ -38,7 +38,8 @@ class Command(BaseCommand):
 			"ph_sentinel",
 			"ICEupdiliman",
 			"official_DMMME",
-			"upeeei"
+			"upeeei",
+			"pjnalzaro"
 		]
 
 		for account_name in twitter_handles:
